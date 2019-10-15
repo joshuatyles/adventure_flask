@@ -51,8 +51,8 @@ def open_door(world: dict, where: str, GAME_HEADER=None) -> str:
     return GAME_HEADER+ENCOUNTER_MONSTER.format(where)
 
 
-@simple_route("/save/name/")
-def save_name(world: dict, monsters_name: str, monsters_race: str,  monsters_head: str) -> str:
+@simple_route("/save/character/")
+def save_character(world: dict, monsters_name: str, monsters_race: str,  monsters_head: str) -> str:
     """
     Update the name of the monster.
 
