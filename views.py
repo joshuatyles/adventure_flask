@@ -38,7 +38,7 @@ def race(world:dict, race:str):
 
 
 @simple_route('/goto/<where>/')
-def open_door(world: dict, where: str) -> str:
+def open_door(world: dict, where: str, GAME_HEADER=None) -> str:
     """
     Update the player location and encounter a monster, prompting the player
     to give them a name.
@@ -52,7 +52,7 @@ def open_door(world: dict, where: str) -> str:
 
 
 @simple_route("/save/name/")
-def save_name(world: dict, monsters_name: str) -> str:
+def save_name(world: dict, monsters_name: str, monsters_race: str,  monsters_head: str) -> str:
     """
     Update the name of the monster.
 
@@ -61,6 +61,8 @@ def save_name(world: dict, monsters_name: str) -> str:
     :return:
     """
     world['name'] = monsters_name
+    world['race'] = monsters_race
+    world['head'] = monsters_head
 
     return GAME_HEADER+"""You are in {where}, and you are nearby {monster_name}
     <br><br>
