@@ -11,44 +11,21 @@ def hello(world: dict) -> str:
     """
     return render_template("index.html")
 
-
-ENCOUNTER_MONSTER = """
-<!-- Curly braces let us inject values into the string -->
-You are in {}. You found a monster!<br>
-
-<!-- Image taken from site that generates random Corgi pictures-->
-<img src="http://placecorgi.com/260/180" /><br>
-    
-What is its name?
-
-<!-- Form allows you to have more text entry -->    
-<form action="/save/name/">
-    <input type="text" name="player"><br>
-    <input type="submit" value="Submit"><br>
-</form>
-"""
-
-@simple_route('/character/')
+@simple_route('/character/race')
 def character(world:dict):
     return render_template("race.html")
+
+@simple_route('/character/head')
+def character(world:dict):
+    return render_template("head.html")
 
 @simple_route('/save/race/')
 def race(world:dict, race:str):
     return race
 
-
-@simple_route('/goto/<where>/')
-def open_door(world: dict, where: str, GAME_HEADER=None) -> str:
-    """
-    Update the player location and encounter a monster, prompting the player
-    to give them a name.
-
-    :param world: The current world
-    :param where: The new location to move to
-    :return: The HTML to show the player
-    """
-    world['location'] = where
-    return GAME_HEADER+ENCOUNTER_MONSTER.format(where)
+@simple_route('/save/head')
+def head(world:dict, head:str):
+    return head
 
 
 @simple_route("/save/character/")
@@ -56,6 +33,8 @@ def save_character(world: dict, monsters_name: str, monsters_race: str,  monster
     """
     Update the name of the monster.
 
+    :param monsters_head:
+    :param monsters_race:
     :param world: The current world
     :param monsters_name:
     :return:
@@ -64,7 +43,7 @@ def save_character(world: dict, monsters_name: str, monsters_race: str,  monster
     world['race'] = monsters_race
     world['head'] = monsters_head
 
-    return GAME_HEADER+"""You are in {where}, and you are nearby {monster_name}
-    <br><br>
-    <a href='/'>Return to the start</a>
-    """.format(where=world['location'], monster_name=world['name'])
+    FINAL_CREATION="""
+    
+    """
+
