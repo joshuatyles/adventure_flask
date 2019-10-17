@@ -14,7 +14,7 @@ from flask import request, session, redirect
 from app import app
 
 INITIAL_WORLD = {
-    'character' : []
+    'character': []
 }
 
 
@@ -52,4 +52,3 @@ def reset():
     """
     session['world'] = json.dumps(INITIAL_WORLD)
     return redirect('/')
-

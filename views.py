@@ -28,14 +28,19 @@ What is its name?
 </form>
 """
 
-@simple_route('/character/')
+@simple_route('/race/')
 def character(world:dict):
     return render_template("race.html")
 
 @simple_route('/save/race/')
 def race(world:dict, race:str):
     return race
-
+@simple_route('/head/')
+def head(world:dict, head:str):
+    return render_template("head.html")
+@simple_route('/legs/')
+def legs(world:dict, legs:str):
+    return render_template("legs.html")
 
 @simple_route('/goto/<where>/')
 def open_door(world: dict, where: str, GAME_HEADER=None) -> str:
