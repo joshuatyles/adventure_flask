@@ -1,13 +1,21 @@
 {% extends "parent_layout.html" %}
+
+
+{% block header %}
+<title>Character Creation</title>
+{% endblock %}
+
+{% block body %}
+
 <p>Welcome to the year 223 PTC (Post Traumatic-Climax). You don't know where you are but you do know that this is not your home.<br>
-    You are in an unfamiliar mossy-stoned building, skeletons and corpses lay besides you <br>
+    You are in an unfamiliar mossy-stoned building, skeletons and corpses lay besides you... <br>
 <b></b>
     A guard in red and black approaches.
 </p>
-<p> Who am I?</p>
+<p> Who am I?<br><br>
 <a href="/race">Choose your race!</a><br>
 <a href="/head">Choose your headgear!</a><br>
 <a href="/legs">Choose your pants!</a><br>
 <a href="/weapon">Choose your weapon!</a><br>
-<a href="/skills">Choose your skills!</a>
-
+    <a href="/skills">Choose your skills!</a></p>
+{% endblock %}

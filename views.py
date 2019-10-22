@@ -4,23 +4,20 @@ from flask import render_template, session, request
 
 @simple_route('/')
 def hello(world: dict) -> str:
-    """
-    The welcome screen for the game.
-
-    :param world: The current world
-    :return: The HTML to show the player
-    """
     return render_template('index.html', world=world)
 
+@simple_route('/character')
+def character_race(world: dict, where:str):
+    world['location'] = where
 
-@simple_route('/race')
-def character(world: dict):
-    return render_template("race.html")
+    if not world['character']:
+        world['character'].append()
+    return render_template('race.html', world=world)
 
 
 @simple_route('/head')
-def head(world: dict, head: str):
-    return render_template("head.html")
+def character_head(world: dict, where:str):
+    return render_template('head.html', world=world)
 
 
 @simple_route('/legs')
@@ -28,7 +25,7 @@ def legs(world: dict, legs: str):
     return render_template("legs.html")
 
 @simple_route("/save/")
-def save_character(world: dict, character_name: str, character_race: str, character_head: str) -> str:
+def save_character(world: dict, *args) -> str:
     """
     Update the name of the monster.
 
@@ -40,3 +37,7 @@ def save_character(world: dict, character_name: str, character_race: str, charac
     world['race'] = character_race
     world['head'] = character_head
 
+    world['character']['Race'] = request.values.get('character_race')
+    world['character']['Head'] = request.values.get('character_head')
+
+    return render_template('character_change.html', world=world)
