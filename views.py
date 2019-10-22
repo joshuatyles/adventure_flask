@@ -1,5 +1,5 @@
 from route_helper import simple_route
-from flask import render_template
+from flask import render_template, session, request
 
 
 @simple_route('/')
@@ -10,24 +10,7 @@ def hello(world: dict) -> str:
     :param world: The current world
     :return: The HTML to show the player
     """
-    return render_template("index.html")
-
-
-ENCOUNTER_MONSTER = """
-<!-- Curly braces let us inject values into the string -->
-You are in {}. You found a monster!<br>
-
-<!-- Image taken from site that generates random Corgi pictures-->
-<img src="http://placecorgi.com/260/180" /><br>
-    
-What is its name?
-
-<!-- Form allows you to have more text entry -->    
-<form action="/save/name/">
-    <input type="text" name="player"><br>
-    <input type="submit" value="Submit"><br>
-</form>
-"""
+    return render_template('index.html', world=world)
 
 
 @simple_route('/race')
