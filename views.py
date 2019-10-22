@@ -1,6 +1,7 @@
 from route_helper import simple_route
 from flask import render_template
 
+
 @simple_route('/')
 def hello(world: dict) -> str:
     """
@@ -28,48 +29,31 @@ What is its name?
 </form>
 """
 
+
 @simple_route('/race')
-def character(world:dict):
+def character(world: dict):
     return render_template("race.html")
 
-@simple_route('/save/race/')
-def race(world:dict, race:str):
-    return race
+
 @simple_route('/head')
-def head(world:dict, head:str):
+def head(world: dict, head: str):
     return render_template("head.html")
+
+
 @simple_route('/legs')
-def legs(world:dict, legs:str):
+def legs(world: dict, legs: str):
     return render_template("legs.html")
 
-@simple_route('/goto/<where>/')
-def open_door(world: dict, where: str, GAME_HEADER=None) -> str:
-    """
-    Update the player location and encounter a monster, prompting the player
-    to give them a name.
-
-    :param world: The current world
-    :param where: The new location to move to
-    :return: The HTML to show the player
-    """
-    world['location'] = where
-    return GAME_HEADER+ENCOUNTER_MONSTER.format(where)
-
-
-@simple_route("/save/character/")
-def save_character(world: dict, monsters_name: str, monsters_race: str,  monsters_head: str) -> str:
+@simple_route("/save/")
+def save_character(world: dict, character_name: str, character_race: str, character_head: str) -> str:
     """
     Update the name of the monster.
 
     :param world: The current world
-    :param monsters_name:
+    :param character_name:
     :return:
     """
-    world['name'] = monsters_name
-    world['race'] = monsters_race
-    world['head'] = monsters_head
+    world['name'] = character_name
+    world['race'] = character_race
+    world['head'] = character_head
 
-    return GAME_HEADER+"""You are in {where}, and you are nearby {monster_name}
-    <br><br>
-    <a href='/'>Return to the start</a>
-    """.format(where=world['location'], monster_name=world['name'])
