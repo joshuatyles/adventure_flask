@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Weapon</title>
-</head>
-<body>
+{% extends "parent_layout.html" %}
+{%  block header %}
+        <title>Weapon</title>
+{% endblock %}
 
-</body>
+{% block body %}
+<form action="/save/weapon">
+    <input type="radio" name="weapon" value="longsword"> Longsword<br>
+    <input type="radio" name="weapon" value="dagger"> Dagger<br>
+    <input type="radio" name="weapon" value="bow"> Bow and Arrow<br>
+    <input type="radio" name="weapon" value="wand"> Wand<br>
+    <input type="Submit" value="submit">
+</form>
+{% endblock %}
 </html>

@@ -13,17 +13,20 @@ def race(world: dict, *args) -> str:
 
 
 @simple_route('/head')
-def character_head(world: dict)->str:
+def head(world: dict) -> str:
     return render_template('head.html', world=world)
 
 
 @simple_route('/legs')
-def legs(world: dict, legs: str):
-    return render_template("legs.html")
+def legs(world: dict):
+    return render_template('legs.html', world=world)
 
+@simple_route('/weapon')
+def weapons(world: dict):
+    return render_template('weapon.html', world=world)
 
 @simple_route("/save/race")
-def save_character(world: dict, character_race: str) -> str:
+def save_race(world: dict, character_race: str) -> str:
     """
     Update the name of the monster.
 
@@ -32,5 +35,41 @@ def save_character(world: dict, character_race: str) -> str:
     :return:
     """
 
-
     return render_template('head.html', world=world)
+
+
+@simple_route("/save/head")
+def save_head(world: dict) -> str:
+    """
+    Update the name of the monster.
+
+    :param character_head:
+    :param world: The current world
+    :return:
+    """
+
+    return render_template('legs.html', world=world)
+
+@simple_route("/save/legs")
+def save_legs(world: dict) -> str:
+    """
+    Update the name of the monster.
+
+    :param character_legs:
+    :param world: The current world
+    :return:
+    """
+
+    return render_template('weapon.html', world=world)
+
+@simple_route("/save/weapon")
+def save_weapon(world: dict) -> str:
+    """
+    Update the name of the monster.
+
+    :param character_weapon:
+    :param world: The current world
+    :return:
+    """
+
+    return render_template('skills.html', weapon=world)
