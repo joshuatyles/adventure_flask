@@ -29,6 +29,10 @@ def weapons(world: dict):
 def skills(world: dict):
     return render_template('skills.html', world=world)
 
+@simple_route('/character/completion')
+def character_completion(world: dict):
+    return render_template('character_completion.html', world=world)
+
 @simple_route("/save/race")
 def save_race(world: dict, character_race: str) -> str:
     """
@@ -88,4 +92,4 @@ def save_skills(world: dict) -> str:
     :return:
     """
 
-    return render_template('character_complete.html', world=world)
+    return render_template('character_completion.html', world=world)

@@ -14,7 +14,7 @@ from flask import request, session, redirect
 from app import app
 
 INITIAL_WORLD = {
-    'character': {'Race': None, 'Head': None}
+    'character': {'Race': None, 'Head': None, 'Legs': None, 'Weapon': None, 'Skills': None}
 }
 
 
