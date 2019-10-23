@@ -25,6 +25,10 @@ def legs(world: dict):
 def weapons(world: dict):
     return render_template('weapon.html', world=world)
 
+@simple_route('/skills')
+def skills(world: dict):
+    return render_template('skills.html', world=world)
+
 @simple_route("/save/race")
 def save_race(world: dict, character_race: str) -> str:
     """
@@ -72,4 +76,16 @@ def save_weapon(world: dict) -> str:
     :return:
     """
 
-    return render_template('skills.html', weapon=world)
+    return render_template('skills.html', world=world)
+
+@simple_route("/save/skills")
+def save_skills(world: dict) -> str:
+    """
+    Update the name of the monster.
+
+    :param character_skills:
+    :param world: The current world
+    :return:
+    """
+
+    return render_template('character_complete.html', world=world)

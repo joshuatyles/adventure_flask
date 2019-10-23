@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>What are your skills</title>
-</head>
-<body>
-<div class="slidecontainer">
-    <input type="range" min="0" max="100" value="50" class="slider" id="my_range">
-</div>
-</body>
+{% extends "parent_layout.html" %}
+{% block header %}
+    <title>What are your skills? Check all that apply.</title>
+{% endblock %}
+
+{% block body %}
+<form action="/character/complete">
+    <input type="checkbox" name="skill" value="Strength"> Strength<br>
+    <input type="checkbox" name="skill" value="Constitution"> Constitution<br>
+    <input type="checkbox" name="skill" value="Dexterity"> Dexterity<br>
+    <input type="checkbox" name="skill" value="Wisdom">Wisdom<br>
+    <input type="checkbox" name="skill" value="Intelligence">Intelligence<br>
+    <input type="checkbox" name="skill" value="Charisma">Charisma<br>
+    <input type="Submit" value="submit">
+</form>
+
+{% endblock %}
 </html>
