@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "parent_layout.html" %}
+{% block header %}
     <title>What type of pants are you wearing?</title>
-</head>
-<body>
-<form action="/save/">
-<p>Please select your pants:</p>
-    <input type="radio" name="pants" value="leather"
-           Leather<br>
-    <input type="radio" name="pants" value="jeans"
-           Jeans<br>
-        <input type="Submit" value="Submit">
+{% endblock %}
+
+{% block body %}
+    <form action="/save/">
+    <p>Please select your pants:</p>
+        <input type="radio" name="pants" value="leather"
+            Leather<br>
+        <input type="radio" name="pants" value="jeans"
+            Jeans<br>
+            <input type="Submit" value="Submit">
 </form>
-</body>
+{% endblock %}
 </html>

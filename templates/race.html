@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "parent_layout.html" %}
+{% block header %}
     <title>Character Creation</title>
-    <h1>What do I look like?</h1>
-</head>
-<body>
-    <form action="/save/">
-        What race am I?<input type="text" name="character_race"
-        <input type="submit" />
+    {% endblock %}
+{% block body %}
+    <form action="/save/race">
+        What race am I?<input type="text" name="character_race">
+        <input type="submit"/>
     </form>
-</body>
+{% endblock %}
 </html>

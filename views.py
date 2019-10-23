@@ -6,17 +6,14 @@ from flask import render_template, session, request
 def hello(world: dict) -> str:
     return render_template('index.html', world=world)
 
-@simple_route('/character')
-def character_race(world: dict, where:str):
-    world['location'] = where
 
-    if not world['character']:
-        world['character'].append()
+@simple_route('/race')
+def race(world: dict, *args) -> str:
     return render_template('race.html', world=world)
 
 
 @simple_route('/head')
-def character_head(world: dict, where:str):
+def character_head(world: dict)->str:
     return render_template('head.html', world=world)
 
 
@@ -24,20 +21,16 @@ def character_head(world: dict, where:str):
 def legs(world: dict, legs: str):
     return render_template("legs.html")
 
-@simple_route("/save/")
-def save_character(world: dict, *args) -> str:
+
+@simple_route("/save/race")
+def save_character(world: dict, character_race: str) -> str:
     """
     Update the name of the monster.
 
+    :param character_race:
     :param world: The current world
-    :param character_name:
     :return:
     """
-    world['name'] = character_name
-    world['race'] = character_race
-    world['head'] = character_head
 
-    world['character']['Race'] = request.values.get('character_race')
-    world['character']['Head'] = request.values.get('character_head')
 
-    return render_template('character_change.html', world=world)
+    return render_template('head.html', world=world)
