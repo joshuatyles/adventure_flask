@@ -23,17 +23,17 @@ def legs(world: dict, *args):
 
 
 @simple_route('/weapon')
-def weapons(world: dict):
+def weapons(world: dict, *args):
     return render_template('weapon.html', world=world)
 
 
 @simple_route('/skills')
-def skills(world: dict):
+def skills(world: dict, *args):
     return render_template('skills.html', world=world)
 
 
 @simple_route('/character/completion')
-def character_completion(world: dict) -> str:
+def character_completion(world: dict, *args):
     return render_template('character_completion.html', world=world)
 
 

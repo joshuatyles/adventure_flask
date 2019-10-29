@@ -5,7 +5,10 @@
     {% endblock %}
 {% block body %}
     <form action="/save/race">
-        What race am I?<input type="text" name="character_race">
+        <input type="radio" name="race" value="Human"> Human<br>
+        <input type="radio" name="race" value="Elf "> Elf<br>
+        <input type="radio" name="race" value="Orc"> Orc<br>
+        <input type="radio" name="race" value="Dwarf"> Dwarf<br>
         <input type="submit"/>
     </form>
 {% endblock %}
