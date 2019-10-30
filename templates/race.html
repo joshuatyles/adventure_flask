@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+from adventure_flask import static
 {% extends "parent_layout.html" %}
 {% block header %}
-    <title>Character Creation</title>
+    <title>Race</title>
     {% endblock %}
 {% block body %}
     <p class="thick">What race am I?</p>
     <form action="/save/race">
-        <input type="radio" name="race" value="Human"> Human<br>
-        <input type="radio" name="race" value="Elf "> Elf<br>
-        <input type="radio" name="race" value="Orc"> Orc<br>
-        <input type="radio" name="race" value="Dwarf"> Dwarf<br>
-        <input type="submit"/>
+        <p><input type="radio" name="race" value="Human"> Human <img src="/static/martin-w-king-dnd-char-bambillious-sketching-2100.jpg" style="width:100px;height:200px;" alt="Human"></p>
+        <p><input type="radio" name="race" value="Elf "> Elf<img src="/static/elf.png" style="width:150px; height:200px"<br></p>
+        <p><input type="radio" name="race" value="Orc"> Orc<img src="/static/orc.jpg" style="width:150px; height:200px"<br></p>
+        <p><input type="radio" name="race" value="Dwarf"> Dwarf<img src="/static/dwarf.png" style="width:150px; height:200px"<br></p>
+        <p><input type="submit"/><p>
     </form>
 {% endblock %}
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 {% extends "parent_layout.html" %}
 {% block header %}
-    <title>What are your skills? Check all that apply.</title>
+    <title></title>
 {% endblock %}
 
 {% block body %}
+    <p class="thick">What are your skills? Check all that apply.</p>
 <form action="/character/completion" name="character_skills">
     <input type="checkbox" name="skills" value="Strength"> Strength<br>
     <input type="checkbox" name="skills" value="Constitution"> Constitution<br>

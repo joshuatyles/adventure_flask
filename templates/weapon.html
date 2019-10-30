@@ -5,12 +5,13 @@
 {% endblock %}
 
 {% block body %}
-<form action="/save/weapon" name="character_weapon">
-    <input type="radio" name="weapon" value="Longsword"> Longsword<br>
-    <input type="radio" name="weapon" value="Dagger"> Dagger<br>
-    <input type="radio" name="weapon" value="Bow"> Bow and Arrow<br>
-    <input type="radio" name="weapon" value="Wand"> Wand<br>
-    <input type="Submit" value="submit">
-</form>
+<p class="thick">Choose your weapon:</p>
+    <form action="/save/weapon" name="character_weapon">
+        <input type="radio" name="weapon" value="Longsword"> Longsword<br>
+        <input type="radio" name="weapon" value="Dagger"> Dagger<br>
+        <input type="radio" name="weapon" value="Bow"> Bow and Arrow<br>
+        <input type="radio" name="weapon" value="Wand"> Wand<br>
+        <input type="Submit" value="submit">
+    </form>
 {% endblock %}
 </html>
