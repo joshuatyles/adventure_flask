@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <title>Fantasy Character</title>
 </head>
+<style>
+p.normal {
+  font-style: normal;
+}
 
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+p.thick {
+  font-weight: bold;
+}
+</style>
 <body>
-<p>At any time you can <a href='/reset/'>reset</a> the creation</p>
-<p> Right now, your character looks like this: {{ world['character'] }}</p>
+<p class="oblique">At any time you can <a href='/reset/'>reset</a> the creation<br>
+    Right now, your character looks like this: {{ world['character'] }}</p>
 
 </body>
 {% block body %}
