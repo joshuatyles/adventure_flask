@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block body %}
-    <p class="thick">What are your skills? Check all that apply.</p>
-<form action="/character/completion" name="character_skills">
-    <input type="checkbox" name="skills" value="Strength"> Strength<br>
-    <input type="checkbox" name="skills" value="Constitution"> Constitution<br>
-    <input type="checkbox" name="skills" value="Dexterity"> Dexterity<br>
-    <input type="checkbox" name="skills" value="Wisdom">Wisdom<br>
-    <input type="checkbox" name="skills" value="Intelligence">Intelligence<br>
-    <input type="checkbox" name="skills" value="Charisma">Charisma<br>
-    <input type="submit">
+    <p class="thick">What is the skill you are best at?</p>
+<form action="/save/skills" name="character_skills">
+    <input type="radio" name="skills" value="Strength"> Strength<br>
+    <input type="radio" name="skills" value="Constitution"> Constitution<br>
+    <input type="radio" name="skills" value="Dexterity"> Dexterity<br>
+    <input type="radio" name="skills" value="Wisdom">Wisdom<br>
+    <input type="radio" name="skills" value="Intelligence">Intelligence<br>
+    <input type="radio" name="skills" value="Charisma">Charisma<br>
+    <input type="submit" value="submit">
 </form>
 
 {% endblock %}

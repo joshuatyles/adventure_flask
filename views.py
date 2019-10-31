@@ -62,6 +62,6 @@ def save_weapon(world: dict, character_weapon: str) -> str:
 
 
 @simple_route("/save/skills")
-def save_skills(world: dict, character_skills: str) -> str:
-    world['character']['skills'] = character_skills
-    return render_template('character_completion.html', world=world)
+def save_skills(world: dict, character_skills: str, *args) -> str:
+        world['character']['skills'] = character_skills
+        return render_template('character_completion.html', world=world)

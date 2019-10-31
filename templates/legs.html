@@ -7,8 +7,8 @@
 {% block body %}
     <p class="thick">Please select your pants:</p>
     <form action="/save/legs" name="character_legs">
-        <input type="radio" name="pants" value="Leather"> Leather<br>
-        <input type="radio" name="pants" value="Jeans"> Jeans<br>
+        <p><input type="radio" name="pants" value="Leather"> Leather <img src="/static/leather.jpg" style="width:100px;height:200px;"></p>
+        <p><input type="radio" name="pants" value="Jeans"> Jeans <img src="/static/jeans.jpg" style="width:150px;height:200px;"</p><br>
         <input type="Submit" value="Submit">
     </form>
 {% endblock %}
