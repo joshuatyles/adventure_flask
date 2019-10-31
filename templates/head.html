@@ -121,6 +121,11 @@ function initComparisons() {
 {% endblock %}
 
 {% block body %}
+    <style>
+    body {background-color: plum}
+    p {font-family: "Arial"; color: midnightblue}
+    </style>
+    <p><u><i>You are starting to remember who you are!</i></u></p>
     <p class="thick"> What is on my head?</p>
         <form action="/save/head">
             <select name="character_head">
@@ -131,7 +136,7 @@ function initComparisons() {
             </select>
             <input type="submit"/>
         </form>
-    <p>Click and slide the blue slider to compare two images:</p>
+    <p>Click and slide the blue slider to change between the viking helmet and the hood!</p>
 
 <div class="img-comp-container">
   <div class="img-comp-img">

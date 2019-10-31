@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-{% extends "parent_layout.html" %}
 {% block header %}
     <title>The end?</title>
 {% endblock %}
 
 {% block body %}
-    <p> As you attempt to figure out who you are, you realize that you are:</p>
-    <p>{{ world['character'] }}</p>
+    <style>
+        body {background-image: url("/static/forest.gif"); background-size:100%}
+        p {font-family:Tahoma, Geneva, sans-serif;background-color: antiquewhite; font-size:25px}
+    </style>
+    <p> You realize through the power of arcana and otherworldy magic that you are:</p>
+    <p>a {{ world['character']['race'] }}, wearing a {{ world['character']['head'] }},  with {{ world['character']['legs'] }}, wielding a {{ world['character']['weapon'] }}, who is proficient in {{ world['character']['skills'] }}</p><br>
+    <p>As you figure out who you are, the guards try to stop you. However you use your {{ world['character']['skills']}} and {{ world['character']['weapon']}} to destroy the guards to get out of the dungeon<br>
+        Once you get out of the dungeon, the first thing you do is look towards the river. This will be your guide for now. As you follow the stream throughout the forest, you aren't sure what you will face next...<br><br>
+    Congratulations!</p>
 {% endblock %}
 </html>
