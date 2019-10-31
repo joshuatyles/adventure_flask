@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-{% extends "parent_layout.html" %}
 
+<! The following code is a script from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_image_compare that will create a slider between two different images>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * {box-sizing: border-box;}
 
@@ -28,7 +30,7 @@
   /*set the appearance of the slider:*/
   width: 40px;
   height: 40px;
-  background-color: #f3f0f0;
+  background-color: #2196F3;
   opacity: 0.7;
   border-radius: 50%;
 }
@@ -111,6 +113,9 @@ function initComparisons() {
   }
 }
 </script>
+<! ------------------------------------------END SCRIPT -------------------------------------------------------->
+{% extends "parent_layout.html" %}
+
 {% block header %}
     <title>Head</title>
 {% endblock %}
@@ -130,10 +135,10 @@ function initComparisons() {
 
 <div class="img-comp-container">
   <div class="img-comp-img">
-    <img src="/static/viking-helmet.jpg" width="300" height="200">
+    <img src="/static/viking-helmet.jpg" style="width:300px; height:200px">
   </div>
   <div class="img-comp-img img-comp-overlay">
-    <img src="/static/hood.jpeg" width="300" height="200">
+    <img src="/static/hood.jpeg" style="width:300px; height:200px">
   </div>
 </div>
 
